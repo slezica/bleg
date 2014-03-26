@@ -1,0 +1,35 @@
+body {
+    width: 760px;
+    margin: auto;
+
+    font-size  : 18px;
+    line-height: 25px; 
+}
+
+h1 {
+    font-size  : 200%;
+    line-height: 150%;
+}
+
+header {
+    margin: 25px 0 25px;
+    text-align : center;
+}
+
+header h1 {
+    font-size  : 250%;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    margin: 25px 0 25px;
+}
+
+#posts article:not(:last-child) {
+    margin-bottom: 25px;
+}
+
+#archives {
+    margin: auto;
+}

@@ -1,0 +1,12 @@
+{% load extras %}
+<article id="{{ post.slug }}">
+    <time>{{ post.date | datestr }}</time>
+
+    <h1 class="title">
+        <a href="{{ post.url }}">{{ post.title }}</a>
+    </h1>
+
+    <div class="body">
+        {{ post.body }}
+    </div>
+</article>

@@ -1,0 +1,5 @@
+source env/bin/activate
+
+alias migrate="python manage.py migrate"
+alias shell="python manage.py shell_plus --use-pythonrc"
+alias serve="python manage.py runserver"

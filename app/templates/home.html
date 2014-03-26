@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <section id="posts">
+    {% for post in posts %}
+      {% include 'include/post.html' %}
+    {% endfor %}
+  </section>
+
+{% endblock %}
+
+{% block footer %}
+  <nav>
+    {% if prev %}
+      <a href="{{ prev.url }}">&lt; newer</a>
+    {% endif %}
+
+    <span>{{ page }} of {{ pages }}</span>
+
+    {% if next %}
+      <a href="{{ next.url }}">older &gt;</a>
+    {% endif %}
+  </nav>
+{% endblock %}

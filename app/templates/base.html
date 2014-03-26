@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>{% block title %}slezica{% endblock %}</title>
+
+  <meta name="description" content="tales from a software developer">
+  <meta name="author" content="Santiago Lezica">
+
+  <link rel="stylesheet" href="/static/reset.css">
+  {# <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"> #}
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+  <header>
+  {% block header %}
+    <h1><a href="/">slezica</a></h1>
+    <nav class="accounts">
+      <a title="GitHub" href="http://github.com/slezica">github</a>
+      <span>•</span>
+      <a title="Stack Overflow" href="http://stackoverflow.com/users/469300">stack overflow</a>
+      <span>•</span>
+      <a title="slezica89@gmail.com" href="mailto:slezica89@gmail.com">mail</a>
+      <span>•</span>
+      <a title="Archives" href="/archives">blog archives</a>
+      <span>•</span>
+      <a title="Archives" href="/projects">pet projects</a>
+    </nav>
+  {% endblock %}
+  </header>
+
+  <div id="content">{% block content %}{% endblock %}</section>
+
+  <footer>
+    {% block footer %}
+    {% endblock %}
+  </footer>
+
+  {% block scripts %}
+  {% endblock %}
+</body>
+
+</html>

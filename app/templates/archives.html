@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load extras %}
+
+{% block content %}
+
+  <section id="archives">
+    {% for post in posts %}
+      <article id="{{ post.slug }}">
+        <time>{{ post.date | datestr }}</time>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+      </article>
+    {% endfor %}
+  </section>
+
+{% endblock %}
