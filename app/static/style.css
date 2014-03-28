@@ -1,14 +1,68 @@
 body {
-    width: 760px;
+    max-width: 700px;
     margin: auto;
+    padding: 5px;
 
     font-size  : 18px;
-    line-height: 25px; 
+    line-height: 25px;
+
+    /*background-color: #eeeeee;*/
 }
 
 h1 {
-    font-size  : 200%;
     line-height: 150%;
+    font-size  : 180%;
+    font-weight: bold;
+    font-family: "Oswald", sans-serif;
+}
+
+time {
+    font-family: "Oswald", sans-serif;
+}
+
+pre, blockquote, code {
+    page-break-inside: avoid;
+
+    font-size  : 14px;
+    font-family: monospace;
+
+    background-color: #e6e6e6;
+}
+
+pre {
+    margin : 10px 0;
+    padding: 10px;
+    
+    overflow   : auto;
+    line-height: 18px;
+}
+
+code { 
+    padding: 2px 4px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #38c5c5;
+}
+
+article .body {
+    font-size  : 90%;
+    font-family: "Raleway", sans-serif;
+}
+
+article .body a {
+    color: #38c5c5;
+}
+
+article .body h1, article .body h2 {
+    margin-top : 17px;
+    font-size  : 180%;
+    font-family: "Oswald", sans-serif;
 }
 
 header {
@@ -17,17 +71,35 @@ header {
 }
 
 header h1 {
-    font-size  : 250%;
+    margin: 0;
+
+    font-size  : 300%;
     font-weight: bold;
 }
 
+header nav a {
+    font-weight: bold;
+}
+
+header nav a:before { content: '['; color: #38c5c5; }
+header nav a:after  { content: ']'; color: #38c5c5; }
+
 footer {
-    text-align: center;
     margin: 25px 0 25px;
+    text-align: center;
+}
+
+footer nav {
+    font-family: "Oswald", sans-serif;
 }
 
 #posts article:not(:last-child) {
     margin-bottom: 25px;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+#posts article p {
+    margin: 15px 0;
 }
 
 #archives {
