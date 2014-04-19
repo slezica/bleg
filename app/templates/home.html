@@ -6,19 +6,18 @@
       {% include 'include/post.html' %}
     {% endfor %}
   </section>
-
 {% endblock %}
 
 {% block footer %}
   <nav>
-    {% if prev %}
-      <a href="{{ prev.url }}">&lt; newer</a>
+    {% if page > 1 %}
+      <a href="/{{ page|add:-1 }}">&lt; newer</a>
     {% endif %}
 
     <span class="of">{{ page }} of {{ pages }}</span>
 
-    {% if next %}
-      <a href="{{ next.url }}">older &gt;</a>
+    {% if page < pages %}
+      <a href="/{{ page|add:1 }}">older &gt;</a>
     {% endif %}
   </nav>
 {% endblock %}

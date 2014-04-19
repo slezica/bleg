@@ -1,5 +1,6 @@
 import glob, os
 import markdown as md
+import bleach
 
 import tools
 from tools import templatefilter, admincommand
@@ -16,6 +17,10 @@ def markdown(text):
         'codehilite',
         'smarty' # HTML-izes ', ", --, ---, ... to &lsquo;, &rsquo;, etc.
     ])
+
+@templatefilter
+def sanitize(html):
+    return bleach.clean(html, tags = bleach.ALLOWED_TAGS + ['p'])
 
 
 @admincommand

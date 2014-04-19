@@ -4,18 +4,26 @@
   <section id="posts">
     {% include 'include/post.html' %}
   </section>
+
+  <section id="comments">
+    {% for comment in post.comments.all %}
+      {% include 'include/comment.html' %}
+    {% endfor %}
+  </section>
 {% endblock %}
 
 {% block footer %}
+  {% include 'include/forms/comment.html' %}
+
   <nav>
   {% with prev=post.prev next=post.next %}
-
-    {% if prev %}
-        <a class="prev" href="{{ prev.url }}">&lt; {{ prev.title }}</a>
-    {% endif %}
     
     {% if next %}
         <a class="next" href="{{ next.url }}">{{ next.title }} &gt;</a>
+    {% endif %}
+
+    {% if prev %}
+        <a class="prev" href="{{ prev.url }}">&lt; {{ prev.title }}</a>
     {% endif %}
 
   {% endwith %}

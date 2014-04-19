@@ -5,6 +5,8 @@ body {
 
     font-size  : 18px;
     line-height: 25px;
+
+    font-family: "Raleway", sans-serif;
 }
 
 h1 {
@@ -24,6 +26,7 @@ h1 {
 #archives time {
     line-height: 45px;
     margin-right: 10px;
+    color: #38c5c5
 }
 
 time {
@@ -62,7 +65,6 @@ a:hover {
 
 article .body {
     font-size  : 90%;
-    font-family: "Raleway", sans-serif;
 }
 
 article .body a {
@@ -91,8 +93,8 @@ header nav a {
     font-weight: bold;
 }
 
-header nav a:before { content: '['; color: #38c5c5; }
-header nav a:after  { content: ']'; color: #38c5c5; }
+header nav a:before { content: '[ '; color: #38c5c5; }
+header nav a:after  { content: ' ]'; color: #38c5c5; }
 
 footer {
     margin: 25px 0 25px;
@@ -119,7 +121,7 @@ footer .next { float: right; }
 
 #archives {
     margin: auto;
-    max-width: 70%;
+    margin-left: 10%;
 }
 
 

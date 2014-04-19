@@ -1,8 +1,10 @@
 import os
-from glob import glob
 
 from cfg import settings
-from django.db.models import Model, CharField, DateField, TextField
+
+from django.db.models import (
+    Model, CharField, DateField, TextField, EmailField, ForeignKey
+)
 
 from tools import strdate, datestr
 
@@ -50,3 +52,11 @@ class Post(Model):
             date  = strdate(meta['date']),
             body  = body
         )
+
+
+class Comment(Model):
+    date   = DateField()
+    post   = ForeignKey(Post, related_name = 'comments')
+    # author = EmailField()
+    body   = TextField(max_length = 300)
+

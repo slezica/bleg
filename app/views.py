@@ -1,6 +1,8 @@
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, redirect
+from django.views.decorators.http import require_POST
 
 from models import Post
+from forms import CommentForm
 from tools import view, Paginator
 
 @view
@@ -13,22 +15,25 @@ def home(request, page = 1):
         'posts': paginator.page(page),
         'page' : page,
         'pages': paginator.num_pages,
-
-        'prev': {
-            'num': page -1,
-            'url': '/%d' % (page - 1)
-        } if page > 1 else None,
-
-        'next': {
-            'num': page + 1,
-            'url': '/%d' % (page + 1)
-        } if page < paginator.num_pages else None
     }
 
 @view
 def single(request, slug):
-    return { 'post': get_object_or_404(Post, slug = slug) }
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+
+        if form.is_valid():
+            comment = form.save()
+            return redirect('{0}#comment-{1}'.format(request.path, comment.id))
+
+    else:
+        form = CommentForm()
+
+    return {
+        'post': get_object_or_404(Post, slug = slug),
+        'form': form
+    }
 
 @view
 def archives(request):
-    return { 'posts': Post.objects.all() }    
+    return { 'posts': Post.objects.all() }

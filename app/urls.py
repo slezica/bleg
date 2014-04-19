@@ -4,5 +4,5 @@ urlpatterns = patterns('app.views',
     url(r'^$', 'home'),
     url(r'^(?P<page>\d+)$', 'home'),
     url(r'^archives$', 'archives'),
-    url(r'^post/(?P<slug>.*)$', 'single'),
+    url(r'^post/(?P<slug>[^/]+)$', 'single'),
 )

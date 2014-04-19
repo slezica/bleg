@@ -19,7 +19,12 @@ def view(f):
     template = f.__name__ + '.html'
 
     def wrapper(request, *args, **kwargs):
-        return render(request, template, f(request, *args, **kwargs))
+        robject = f(request, *args, **kwargs)
+
+        if isinstance(robject, django.http.response.HttpResponse):
+            return robject
+        else:
+            return render(request, template, robject)
 
     functools.update_wrapper(wrapper, f)
     return wrapper

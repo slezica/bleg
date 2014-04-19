@@ -1,0 +1,7 @@
+<article id="comment-{{ comment.id }}">
+    <time>{{ comment.date | datestr }}</time>
+
+    <div class="body">
+        {{ comment.body | markdown | sanitize | safe }}
+    </div>
+</article>
