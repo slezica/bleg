@@ -5,8 +5,6 @@ body {
 
     font-size  : 18px;
     line-height: 25px;
-
-    /*background-color: #eeeeee;*/
 }
 
 h1 {
@@ -14,6 +12,18 @@ h1 {
     font-size  : 180%;
     font-weight: bold;
     font-family: "Oswald", sans-serif;
+}
+
+#archives h1 {
+    line-height: 45px;
+    font-size: 130%;
+    font-weight: normal;
+    display: inline-block;
+}
+
+#archives time {
+    line-height: 45px;
+    margin-right: 10px;
 }
 
 time {
@@ -61,7 +71,7 @@ article .body a {
 
 article .body h1, article .body h2 {
     margin-top : 17px;
-    font-size  : 180%;
+    font-size  : 160%;
     font-family: "Oswald", sans-serif;
 }
 
@@ -92,6 +102,11 @@ footer {
 footer nav {
     font-family: "Oswald", sans-serif;
 }
+footer .prev, .next {
+    display: block;
+}
+footer .prev { float: left;  }
+footer .next { float: right; }
 
 #posts article:not(:last-child) {
     margin-bottom: 25px;
@@ -104,4 +119,23 @@ footer nav {
 
 #archives {
     margin: auto;
+    max-width: 70%;
+}
+
+
+kbd {
+    display: inline-block;
+    vertical-align: middle;
+
+    padding: 0.1em 0.6em;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+
+    font-size: 65%;
+    font-family: monospace;
+    text-transform: uppercase;
+
+    margin: 0 0.1em;
+    line-height: 1.4;
+    white-space: nowrap;
 }

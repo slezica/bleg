@@ -12,13 +12,13 @@
 {% block footer %}
   <nav>
     {% if prev %}
-      <a class="prev" href="{{ prev.url }}">&lt; newer</a>
+      <a href="{{ prev.url }}">&lt; newer</a>
     {% endif %}
 
     <span class="of">{{ page }} of {{ pages }}</span>
 
     {% if next %}
-      <a class="next" href="{{ next.url }}">older &gt;</a>
+      <a href="{{ next.url }}">older &gt;</a>
     {% endif %}
   </nav>
 {% endblock %}

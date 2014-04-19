@@ -9,7 +9,7 @@ from django.core.management.base import BaseCommand, CommandError
 
 
 def strdate(string):
-    return datetime.strptime(string, '%Y-%m-%d')
+    return datetime.strptime(string, '%Y-%m-%d').date()
 
 def datestr(date, spaces = False):
     return datetime.strftime(date, '%Y - %m - %d' if spaces else '%Y-%m-%d')

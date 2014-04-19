@@ -7,15 +7,17 @@
 {% endblock %}
 
 {% block footer %}
+  <nav>
   {% with prev=post.prev next=post.next %}
-    
-    {% if next %}
-        <a href="{{ next.url }}">&lt; {{ next.title }}</a>
-    {% endif %}
 
     {% if prev %}
-        <a href="{{ prev.url }}">{{ prev.title }} &gt;</a>
+        <a class="prev" href="{{ prev.url }}">&lt; {{ prev.title }}</a>
+    {% endif %}
+    
+    {% if next %}
+        <a class="next" href="{{ next.url }}">{{ next.title }} &gt;</a>
     {% endif %}
 
   {% endwith %}
+  </nav>
 {% endblock %}

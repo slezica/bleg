@@ -1,0 +1,4 @@
+-e git://github.com/django/django.git@fc79c3fb3daf64b911b1ff8fed30f73c56630416#egg=Django-master
+Markdown==2.4
+Pygments==1.6
+django-extensions==1.3.3

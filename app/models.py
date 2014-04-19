@@ -50,13 +50,3 @@ class Post(Model):
             date  = strdate(meta['date']),
             body  = body
         )
-
-    @staticmethod
-    def load_files():
-        files = glob(os.path.join(settings.POST_ROOT , '*.md'))
-
-        for filename in files:
-            post = Post.from_file(filename)
-
-            if not Post.objects.filter(slug = post.slug).exists():
-                post.save()
